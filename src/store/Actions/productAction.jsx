@@ -49,6 +49,7 @@ export const getProduct = ()=>async(dispatch, getState)=>{
    dispatch( LogedUser(data))
     
     } catch (error) {
+      console.log("hello");
       console.log(error);
     }
 
