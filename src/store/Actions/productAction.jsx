@@ -48,11 +48,11 @@ export const getProduct = ()=>async(dispatch, getState)=>{
         "calling"
       );
       const {data} = await axios.post("/login",user)
-   
+   console.log(data+"login");
    dispatch( LogedUser(data))
     
     } catch (error) {
-      console.log("hello");
+
       console.log(error);
     }
 
@@ -60,7 +60,7 @@ export const getProduct = ()=>async(dispatch, getState)=>{
   export const LoginUser = ()=>async(dispatch, getState)=>{
     try {
       const {data} = await axios.get("/LoginUser")
-console.log(data);
+console.log(data+"logedinuser");
    dispatch(Login(data))
     
     } catch (error) {
