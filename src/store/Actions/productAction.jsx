@@ -44,6 +44,9 @@ export const getProduct = ()=>async(dispatch, getState)=>{
       }
   export const asynclogin = (user)=>async(dispatch, getState)=>{
     try {
+      console.log(
+        "calling"
+      );
       const {data} = await axios.post("/login",user)
    
    dispatch( LogedUser(data))
