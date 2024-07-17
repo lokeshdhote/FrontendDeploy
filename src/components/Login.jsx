@@ -21,6 +21,7 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log("chla");
     dispatch(asynclogin({ email, password }));
   };
   useEffect(() => {

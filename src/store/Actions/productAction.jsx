@@ -60,7 +60,7 @@ export const getProduct = ()=>async(dispatch, getState)=>{
   export const LoginUser = ()=>async(dispatch, getState)=>{
     try {
       const {data} = await axios.get("/LoginUser")
-
+console.log(data);
    dispatch(Login(data))
     
     } catch (error) {
