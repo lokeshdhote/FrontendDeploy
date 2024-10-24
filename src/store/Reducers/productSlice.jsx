@@ -61,16 +61,16 @@ export const productSlice = createSlice({
       state.loading = true
     },
     LogedUser: (state, action) => {
-      (state.LogedUser = action.payload),
-        (state.message = "Login Successfully"),
-        state.loading = false
+      state.LogedUser = action.payload
     },
     LogedUserError: (state, action) => {
-      state.error = "Error while logging",
+      state.error = "Error while logging";
       state.loading = false
     },
     Login: (state, action) => {
-      state.Login = action.payload;
+      state.Login = action.payload,
+      state.message = "Login Successfully",
+      state.loading = false
     },
     resgistedin: (state, action) => {
       state.RegisterUser = action.payload;
