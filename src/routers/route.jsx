@@ -21,9 +21,9 @@ const route = () => {
   const { Login } = useSelector((state) => state.productReducer);
 console.log(Login);
    
-useEffect(() => {
-  dispatch(LoginUser());
-}, [dispatch]);
+// useEffect(() => {
+//   dispatch(LoginUser());
+// }, [dispatch]);
 
 
   return (
