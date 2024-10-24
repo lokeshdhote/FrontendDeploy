@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance =  axios.create({
-    baseURL :"https://backend-deploy-blush.vercel.app",
+    baseURL :"https://backenddeploy-1-4mre.onrender.com/",
 
     // baseURL :"http://localhost:3000/",
 
