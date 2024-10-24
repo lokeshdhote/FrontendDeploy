@@ -6,9 +6,10 @@ import { useEffect } from "react";
 const Nav = ()=>{
     const dispatch = useDispatch()
       
-    useEffect(()=>{
-      dispatch(LoginUser())
-    },[dispatch])
+    // useEffect(()=>{
+    //   dispatch(LoginUser())
+    // },[dispatch])
+    
     const {Login} = useSelector((state)=>state.productReducer)
 
 

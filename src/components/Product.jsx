@@ -25,7 +25,7 @@ const Product = () => {
   // Fetch product data when the component mounts
   useEffect(() => {
     dispatch(getProduct());
-    dispatch(LoginUser())
+    // dispatch(LoginUser())
   }, [dispatch]);
   useEffect(() => {
    

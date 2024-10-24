@@ -59,17 +59,17 @@ export const getProduct = ()=>async(dispatch, getState)=>{
     }
 
   }
-  export const LoginUser = ()=>async(dispatch, getState)=>{
-    try {
-      const {data} = await axios.get("/LoginUser")
-console.log(data+"logedinuser");
-   dispatch(LogedUser(data))
+//   export const LoginUser = ()=>async(dispatch, getState)=>{
+//     try {
+//       const {data} = await axios.get("/LoginUser")
+// console.log(data+"logedinuser");
+//    dispatch(LogedUser(data))
     
-    } catch (error) {
-      console.log(error);
-    }
+//     } catch (error) {
+//       console.log(error);
+//     }
 
-  }
+//   }
   
   export const registered = (registeruser)=>async(dispatch, getState)=>{
     try {

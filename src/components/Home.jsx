@@ -6,9 +6,9 @@ import { useEffect } from "react";
 const Home = ()=>{
   const dispatch = useDispatch();
   
-  useEffect(() => {
-    dispatch(LoginUser());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(LoginUser());
+  // }, [dispatch]);
 
 
 return(
