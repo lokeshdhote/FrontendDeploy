@@ -1,10 +1,18 @@
-import { useEffect, useCallback } from "react";
+import { useEffect, useCallback, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { addmoreCart, cartPage, removeCart } from "../store/Actions/productAction";
+import { addmoreCart, asyncPayment, cartPage, removeCart } from "../store/Actions/productAction";
 import useRazorpay from "react-razorpay";
+import { customAlphabet } from 'nanoid'
 
 const Cart = () => {
+  const nanoid = customAlphabet('1234567890abcdef', 10)
+  
+
+
+  const [paymetId , setPaymentId]= useState()
+
+
   const [Razorpay, isLoaded] = useRazorpay();
   const dispatch = useDispatch();
   const { cartdata } = useSelector((state) => state.productReducer);
@@ -56,6 +64,12 @@ const Cart = () => {
       },
       handler: (response) => {
         alert(`Payment ID: ${response.razorpay_payment_id}`);
+    const paymentId=`${response.razorpay_payment_id}`;
+const orderId= nanoid(10)
+console.log(orderId);
+
+
+        dispatch(asyncPayment({paymentId,orderId}))
         // You can add additional handling for successful payment here
       },
       modal: {
@@ -85,6 +99,15 @@ const Cart = () => {
     dispatch(cartPage());
   }, [dispatch, cartdata?.SUM]);
 
+  // useEffect(()=>{
+  //   if(paymetId){
+  //     dispatch(asyncPayment({paymetId}))
+  //     setPaymentId()
+  //   }
+  
+ 
+  //    },[paymetId,dispatch])
+      
   return (
     <div className="w-full min-h-screen bg-emerald-700">
       {/* Header Section */}

@@ -23,6 +23,7 @@ const Login = () => {
     e.preventDefault();
     console.log("chla");
     console.log(email,password);
+    
     dispatch(asynclogin({ email, password }));
   };
   useEffect(() => {

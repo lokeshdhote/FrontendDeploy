@@ -47,6 +47,8 @@ export const getProduct = ()=>async(dispatch, getState)=>{
       console.log(
         "calling"
       );
+      console.log(user);
+      
       const {data} = await axios.post("/login",user)
    console.log(data+"login");
    dispatch( LogedUser(data))
@@ -178,6 +180,20 @@ console.log(data+"logedinuser");
       const {data} = await axios.get(`/search/${searcher}`);
 
      dispatch(search(data))
+  
+  
+    } catch (error) {
+      console.log(error);
+    }
+
+  }
+  export const asyncPayment= (paymetId)=>async(dispatch, getState)=>{
+    try {
+      console.log(paymetId);
+      
+      const {data} = await axios.post("/payment",paymetId);
+
+     dispatch()
   
   
     } catch (error) {
