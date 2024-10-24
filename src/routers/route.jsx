@@ -17,14 +17,14 @@ import { LoginUser } from "../store/Actions/productAction";
 
 const route = () => {
   const dispatch = useDispatch();
-  
-  useEffect(() => {
-    dispatch(LoginUser());
-  }, [dispatch]);
 
   const { Login } = useSelector((state) => state.productReducer);
 console.log(Login);
- 
+   
+useEffect(() => {
+  dispatch(LoginUser());
+}, [dispatch]);
+
 
   return (
     <Routes>
